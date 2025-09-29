@@ -1,0 +1,2836 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2025 5:13:41 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-2P67OG8"
+  DTS:CreatorName="DESKTOP-2P67OG8\PC"
+  DTS:DTSID="{D2075D08-548A-4ADD-9CF5-E5B7C302BCAE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{A9492484-BFB9-45C6-8991-5BAAC632D6D1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[agencias.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{0CC24244-F635-45A9-B496-60B74660346A}"
+      DTS:ObjectName="agencias.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\PC\Downloads\riesgo_crediticio_dw\agencias.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[cliente.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CEA75B9E-0EA0-41A0-9786-72756A555C9C}"
+      DTS:ObjectName="cliente.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4106"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\PC\Downloads\riesgo_crediticio_dw\clientes.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="codigo_cliente"
+              DTS:DTSID="{4A42A53E-10B1-43B8-8279-662047B94F67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nombre_completo"
+              DTS:DTSID="{A5E2B91F-D641-42C8-B51B-569685785A89}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tipo_cliente"
+              DTS:DTSID="{BA465810-040E-408B-A323-C768AC4C1469}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dpi"
+              DTS:DTSID="{F4C83063-0DAC-40E6-83E7-9F8DF8DBE07F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nit"
+              DTS:DTSID="{DCEFDE7E-B715-4A29-A60F-07419F7F31DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fecha_alta"
+              DTS:DTSID="{E0B3EAEC-1F59-4381-9253-E2D5F17ED3A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="estado_cliente"
+              DTS:DTSID="{D8D762CB-96D9-46D3-85E4-07B45608BCEC}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[evaluaciones riesgo.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{fc87e5b0-b877-403a-b8c4-929148374275}"
+      DTS:ObjectName="evaluaciones riesgo.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4106"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\PC\Downloads\riesgo_crediticio_dw\evaluaciones_riesgo.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_evaluacion"
+              DTS:DTSID="{5C9780D8-66D0-44ED-B09F-6646E54675C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="codigo_cliente"
+              DTS:DTSID="{C03CEC73-6998-4852-A419-72A41C858422}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fecha_evaluacion"
+              DTS:DTSID="{B797E23C-2996-47C7-8EC3-3E8074146E75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="clasificacion_riesgo"
+              DTS:DTSID="{937EC826-2F94-4C68-A29B-ACE7DF89D4C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="motivo"
+              DTS:DTSID="{A0B3D7A8-8A29-4015-8615-FB153BAF2768}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="evaluador"
+              DTS:DTSID="{5D559665-5000-45B2-A82E-CB6409D7E451}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.riesgo_crediticio_dw]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2D0EA084-10A4-4CED-BAEA-814C7C7B94E9}"
+      DTS:ObjectName="localhost.riesgo_crediticio_dw">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=chn_dw;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{2D0EA084-10A4-4CED-BAEA-814C7C7B94E9}localhost.riesgo_crediticio_dw;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[productos financieros.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{929CC7EC-5585-44D1-B599-408FA3597317}"
+      DTS:ObjectName="productos financieros.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\PC\Downloads\riesgo_crediticio_dw\productos_financieros.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="numero_producto"
+              DTS:DTSID="{D6A6BF56-0612-4EE4-B884-6682F38063C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="codigo_cliente"
+              DTS:DTSID="{497E077E-FC76-4683-98FA-FA303AEB009A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tipo_producto"
+              DTS:DTSID="{29B23B80-BF6A-4C08-9510-35A7E06BA67E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="saldo_actual"
+              DTS:DTSID="{E517D2D5-1E1A-4068-9CE8-E2960B1D170C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fecha_apertura"
+              DTS:DTSID="{1DF79148-7147-4FD4-99BD-743D45C1F657}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="estado_producto"
+              DTS:DTSID="{3D0FCB8C-AC71-481E-AE65-2AF30F7D586B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tasa_interes"
+              DTS:DTSID="{0B531345-752E-4BF1-AF83-A029A9483968}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="plazo_meses"
+              DTS:DTSID="{2DD53D7C-031B-4A33-8795-39F83316EA60}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[transacciones.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E0AF7207-C5E5-4D02-9411-18CCEBEDBD5B}"
+      DTS:ObjectName="transacciones.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\PC\Downloads\riesgo_crediticio_dw\transacciones.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_transaccion"
+              DTS:DTSID="{40B0CF18-8388-431B-A0B1-8294D69BDB6E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="numero_producto"
+              DTS:DTSID="{2A691CA6-B124-4021-B2FE-CB76C7A1260D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fecha_transaccion"
+              DTS:DTSID="{002F2610-EFF2-4F71-BE4A-C7C2EFEEA323}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="monto_transaccion"
+              DTS:DTSID="{91C15A25-0FCE-4F90-BFC1-855D0705AB95}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tipo_transaccion"
+              DTS:DTSID="{80A89DBE-28FA-4D94-B1D4-8139F6D22EEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="canal_transaccion"
+              DTS:DTSID="{74E61903-211C-41CD-96FF-29E6CE53E513}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="agencia_codigo"
+              DTS:DTSID="{6101B327-777C-4BEB-972A-6BA277474D2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="clasificacion_riesgo"
+              DTS:DTSID="{4FE690A6-16F4-4619-855C-F124925C5130}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga Stage Agencias"
+      DTS:CreationName="Microsoft.BulkInsertTask"
+      DTS:Description="Tarea Inserción masiva"
+      DTS:DTSID="{1CAF8392-3B70-4DD2-9578-69066FF08F6D}"
+      DTS:ExecutableType="Microsoft.BulkInsertTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Stage Agencias"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData
+          BulkInsertTask:SourceConnectionName="{0CC24244-F635-45A9-B496-60B74660346A}"
+          BulkInsertTask:DestinationConnectionName="{2D0EA084-10A4-4CED-BAEA-814C7C7B94E9}"
+          BulkInsertTask:DestinationTableName="[stage].[agencias]"
+          BulkInsertTask:FieldTerminator="Comma {,}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carga Stage Clientes"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{51399c56-5228-4eeb-bd34-9f081d6f7d75}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Stage Clientes">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga Stage Clientes\Destino de OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino de OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[stage].[clientes]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Stage Clientes\Destino de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.riesgo_crediticio_dw]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.riesgo_crediticio_dw]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[codigo_cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="codigo_cliente"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo_cliente]"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[codigo_cliente]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nombre_completo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nombre_completo"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_completo]"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nombre_completo]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[tipo_cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tipo_cliente"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_cliente]"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_cliente]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[dpi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="dpi"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[dpi]"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[dpi]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nit"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nit]"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nit]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[fecha_alta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="fecha_alta"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_alta]"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_alta]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[estado_cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="estado_cliente"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado_cliente]"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estado_cliente]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="codigo_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_completo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="nombre_completo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="tipo_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[dpi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="dpi" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="nit" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_alta]"
+                      dataType="dbTimeStamp"
+                      name="fecha_alta" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="estado_cliente" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Stage Clientes\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Clientes\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Clientes\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Stage Clientes\Origen de archivo plano"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de archivo plano"
+              localeId="4106"
+              name="Origen de archivo plano"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si las columnas de longitud cero se tratan como NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Stage Clientes\Origen de archivo plano.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[cliente.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[cliente.csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                  name="Salida de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[codigo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[codigo_cliente]"
+                      length="50"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[codigo_cliente]"
+                      name="codigo_cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nombre_completo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[nombre_completo]"
+                      length="50"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nombre_completo]"
+                      name="nombre_completo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[tipo_cliente]"
+                      length="50"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_cliente]"
+                      name="tipo_cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[dpi]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[dpi]"
+                      length="50"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[dpi]"
+                      name="dpi"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nit]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[nit]"
+                      length="50"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nit]"
+                      name="nit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_alta]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_alta]"
+                      length="50"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_alta]"
+                      name="fecha_alta"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estado_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[estado_cliente]"
+                      length="50"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estado_cliente]"
+                      name="estado_cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[codigo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="codigo_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[nombre_completo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="nombre_completo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[tipo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tipo_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[dpi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="dpi" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[nit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="nit" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_alta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fecha_alta" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[estado_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="estado_cliente" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Columna de salida de error de origen de archivo plano"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      name="Columna de salida de error de origen de archivo plano" />
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga Stage Clientes.Paths[Salida de origen de archivo plano]"
+              endId="Package\Carga Stage Clientes\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de archivo plano"
+              startId="Package\Carga Stage Clientes\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carga Stage Evaluaciones Riesgo"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Carga evaluaciones riesgo"
+      DTS:DTSID="{89BA4D99-8F29-4D34-9D18-9D4DCED2B412}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Stage Evaluaciones Riesgo">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino de OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[stage].[evaluaciones_riesgo]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.riesgo_crediticio_dw]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.riesgo_crediticio_dw]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[codigo_cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="codigo_cliente"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo_cliente]"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[codigo_cliente]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[id_evaluacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id_evaluacion"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_evaluacion]"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[id_evaluacion]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[fecha_evaluacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="fecha_evaluacion"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_evaluacion]"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_evaluacion]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[clasificacion_riesgo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="clasificacion_riesgo"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[clasificacion_riesgo]"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[clasificacion_riesgo]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[motivo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="motivo"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[motivo]"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[motivo]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[evaluador]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="evaluador"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[evaluador]"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[evaluador]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[clasificacion_riesgo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="clasificacion_riesgo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_evaluacion]"
+                      dataType="i4"
+                      name="id_evaluacion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="codigo_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_evaluacion]"
+                      dataType="dbDate"
+                      name="fecha_evaluacion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[motivo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="motivo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[evaluador]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="evaluador" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de archivo plano"
+              localeId="4106"
+              name="Origen de archivo plano"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si las columnas de longitud cero se tratan como NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[evaluaciones riesgo.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[evaluaciones riesgo.csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                  name="Salida de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[codigo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[codigo_cliente]"
+                      length="50"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[codigo_cliente]"
+                      name="codigo_cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[id_evaluacion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[id_evaluacion]"
+                      length="50"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[id_evaluacion]"
+                      name="id_evaluacion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_evaluacion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_evaluacion]"
+                      length="50"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_evaluacion]"
+                      name="fecha_evaluacion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[clasificacion_riesgo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[clasificacion_riesgo]"
+                      length="50"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[clasificacion_riesgo]"
+                      name="clasificacion_riesgo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[motivo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[motivo]"
+                      length="500"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[motivo]"
+                      name="motivo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[evaluador]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[evaluador]"
+                      length="50"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[evaluador]"
+                      name="evaluador"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[codigo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="codigo_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[id_evaluacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_evaluacion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_evaluacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fecha_evaluacion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[clasificacion_riesgo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="clasificacion_riesgo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[motivo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="motivo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[evaluador]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="evaluador" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Columna de salida de error de origen de archivo plano"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      name="Columna de salida de error de origen de archivo plano" />
+                    <outputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga Stage Evaluaciones Riesgo.Paths[Salida de origen de archivo plano]"
+              endId="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de archivo plano"
+              startId="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carga Stage Productos Financieros"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{be2b04bd-426b-40ca-9144-7dcaced96793}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Stage Productos Financieros">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga Stage Productos Financieros\Destino de OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino de OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[stage].[productos_financieros]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.riesgo_crediticio_dw]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.riesgo_crediticio_dw]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[codigo_cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="codigo_cliente"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo_cliente]"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[codigo_cliente]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[numero_producto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="numero_producto"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[numero_producto]"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[numero_producto]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[tipo_producto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tipo_producto"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_producto]"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_producto]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[saldo_actual]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="saldo_actual"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[saldo_actual]"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[saldo_actual]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[fecha_apertura]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="fecha_apertura"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_apertura]"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_apertura]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[estado_producto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="estado_producto"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado_producto]"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estado_producto]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[tasa_interes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tasa_interes"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tasa_interes]"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tasa_interes]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[plazo_meses]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="plazo_meses"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[plazo_meses]"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[plazo_meses]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="codigo_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[numero_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="numero_producto" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tipo_producto" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[saldo_actual]"
+                      dataType="numeric"
+                      name="saldo_actual"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_apertura]"
+                      dataType="dbTimeStamp"
+                      name="fecha_apertura" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="estado_producto" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tasa_interes]"
+                      dataType="numeric"
+                      name="tasa_interes"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[plazo_meses]"
+                      dataType="i4"
+                      name="plazo_meses" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Stage Productos Financieros\Origen de archivo plano"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de archivo plano"
+              localeId="3082"
+              name="Origen de archivo plano"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si las columnas de longitud cero se tratan como NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[productos financieros.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[productos financieros.csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                  name="Salida de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[codigo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[codigo_cliente]"
+                      length="50"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[codigo_cliente]"
+                      name="codigo_cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[numero_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[numero_producto]"
+                      length="50"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[numero_producto]"
+                      name="numero_producto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[tipo_producto]"
+                      length="50"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_producto]"
+                      name="tipo_producto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[saldo_actual]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[saldo_actual]"
+                      length="50"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[saldo_actual]"
+                      name="saldo_actual"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_apertura]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_apertura]"
+                      length="50"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_apertura]"
+                      name="fecha_apertura"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estado_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[estado_producto]"
+                      length="50"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estado_producto]"
+                      name="estado_producto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tasa_interes]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[tasa_interes]"
+                      length="50"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tasa_interes]"
+                      name="tasa_interes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[plazo_meses]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[plazo_meses]"
+                      length="50"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[plazo_meses]"
+                      name="plazo_meses"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[codigo_cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="codigo_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[numero_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="numero_producto" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[tipo_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tipo_producto" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[saldo_actual]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="saldo_actual" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_apertura]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fecha_apertura" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[estado_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="estado_producto" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[tasa_interes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tasa_interes" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[plazo_meses]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="plazo_meses" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Columna de salida de error de origen de archivo plano"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      name="Columna de salida de error de origen de archivo plano" />
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga Stage Productos Financieros.Paths[Salida de origen de archivo plano]"
+              endId="Package\Carga Stage Productos Financieros\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de archivo plano"
+              startId="Package\Carga Stage Productos Financieros\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carga Stage Transacciones"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{e433e76b-61bb-4f68-bbee-9691d80bc4e7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Stage Transacciones">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga Stage Transacciones\Destino de OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino de OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[stage].[transacciones]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Stage Transacciones\Destino de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.riesgo_crediticio_dw]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.riesgo_crediticio_dw]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[numero_producto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="numero_producto"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[numero_producto]"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[numero_producto]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[id_transaccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id_transaccion"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_transaccion]"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[id_transaccion]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[fecha_transaccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="fecha_transaccion"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_transaccion]"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_transaccion]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[monto_transaccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="monto_transaccion"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[monto_transaccion]"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[monto_transaccion]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[tipo_transaccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tipo_transaccion"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_transaccion]"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_transaccion]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[canal_transaccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="canal_transaccion"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[canal_transaccion]"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[canal_transaccion]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[agencia_codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="agencia_codigo"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[agencia_codigo]"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[agencia_codigo]" />
+                    <inputColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[clasificacion_riesgo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="clasificacion_riesgo"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[clasificacion_riesgo]"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[clasificacion_riesgo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[numero_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="numero_producto" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_transaccion]"
+                      dataType="i8"
+                      name="id_transaccion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_transaccion]"
+                      dataType="dbTimeStamp"
+                      name="fecha_transaccion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[monto_transaccion]"
+                      dataType="numeric"
+                      name="monto_transaccion"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tipo_transaccion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[canal_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="canal_transaccion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[agencia_codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="agencia_codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[clasificacion_riesgo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="clasificacion_riesgo" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Stage Transacciones\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Transacciones\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Transacciones\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Stage Transacciones\Origen de archivo plano"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de archivo plano"
+              localeId="3082"
+              name="Origen de archivo plano"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si las columnas de longitud cero se tratan como NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Stage Transacciones\Origen de archivo plano.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[transacciones.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[transacciones.csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                  name="Salida de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[numero_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[numero_producto]"
+                      length="50"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[numero_producto]"
+                      name="numero_producto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[id_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[id_transaccion]"
+                      length="50"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[id_transaccion]"
+                      name="id_transaccion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_transaccion]"
+                      length="50"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_transaccion]"
+                      name="fecha_transaccion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[monto_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[monto_transaccion]"
+                      length="50"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[monto_transaccion]"
+                      name="monto_transaccion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[tipo_transaccion]"
+                      length="50"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_transaccion]"
+                      name="tipo_transaccion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[canal_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[canal_transaccion]"
+                      length="50"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[canal_transaccion]"
+                      name="canal_transaccion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[agencia_codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[agencia_codigo]"
+                      length="50"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[agencia_codigo]"
+                      name="agencia_codigo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[clasificacion_riesgo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[clasificacion_riesgo]"
+                      length="50"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[clasificacion_riesgo]"
+                      name="clasificacion_riesgo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[numero_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="numero_producto" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[id_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_transaccion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fecha_transaccion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[monto_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="monto_transaccion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[tipo_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tipo_transaccion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[canal_transaccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="canal_transaccion" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[agencia_codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="agencia_codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[clasificacion_riesgo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="clasificacion_riesgo" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Columna de salida de error de origen de archivo plano"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      name="Columna de salida de error de origen de archivo plano" />
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga Stage Transacciones.Paths[Salida de origen de archivo plano]"
+              endId="Package\Carga Stage Transacciones\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de archivo plano"
+              startId="Package\Carga Stage Transacciones\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Stage Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{BC1C4810-4F31-4A93-98FF-CA51ABDCDB13}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Stage Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2D0EA084-10A4-4CED-BAEA-814C7C7B94E9}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stage.clientes;&#xA;TRUNCATE TABLE stage.productos_financieros;&#xA;TRUNCATE TABLE stage.transacciones;&#xA;TRUNCATE TABLE stage.agencias;&#xA;TRUNCATE TABLE stage.evaluaciones_riesgo;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{5EE92C56-2AD2-4251-B76A-8750283E6552}"
+      DTS:From="Package\Carga Stage Agencias"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Carga Stage Evaluaciones Riesgo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B4A18411-7C40-474A-AC8D-0C7D1D73DEF9}"
+      DTS:From="Package\Carga Stage Evaluaciones Riesgo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Carga Stage Clientes" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{C0FBAD9C-C8FE-4131-B169-850EE2F2E078}"
+      DTS:From="Package\Carga Stage Clientes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Carga Stage Productos Financieros" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{F5032376-FC9C-4452-B6EC-5DFEC0B83AFE}"
+      DTS:From="Package\Carga Stage Productos Financieros"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Carga Stage Transacciones" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{0DB6014D-B574-4AD1-A1D0-C050F6B792A9}"
+      DTS:From="Package\Truncate Stage Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\Carga Stage Agencias" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Carga Stage Agencias"
+          TopLeft="249,54" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Carga Stage Evaluaciones Riesgo"
+          TopLeft="374.5,138.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="345.5,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="136.5,42.5"
+              Start="0,0"
+              End="136.5,35">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.25"
+                    Point2="0,21.25"
+                    Point3="4,21.25" />
+                  <mssgle:LineSegment
+                    End="132.5,21.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="132.5,21.25"
+                    Point2="136.5,21.25"
+                    Point3="136.5,25.25" />
+                  <mssgle:LineSegment
+                    End="136.5,35" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Carga Stage Clientes"
+          TopLeft="535,231" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="482,180.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="143,50.5"
+              Start="0,0"
+              End="143,43">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.25"
+                    Point2="0,25.25"
+                    Point3="4,25.25" />
+                  <mssgle:LineSegment
+                    End="139,25.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="139,25.25"
+                    Point2="143,25.25"
+                    Point3="143,29.25" />
+                  <mssgle:LineSegment
+                    End="143,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Carga Stage Productos Financieros"
+          TopLeft="748,304" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="625,273">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="230,31"
+              Start="0,0"
+              End="230,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="226,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="226,15.5"
+                    Point2="230,15.5"
+                    Point3="230,19.5" />
+                  <mssgle:LineSegment
+                    End="230,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Carga Stage Transacciones"
+          TopLeft="927,374" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="855,346">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="179,28"
+              Start="0,0"
+              End="179,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="175,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="175,14"
+                    Point2="179,14"
+                    Point3="179,18" />
+                  <mssgle:LineSegment
+                    End="179,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Truncate Stage Tables"
+          TopLeft="111,257" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="199,257">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="115.666666666667,-161"
+              Start="0,0"
+              End="115.666666666667,-153.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-91.8057553956834" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-91.8057553956834"
+                    Point2="0,-95.8057553956834"
+                    Point3="4,-95.8057553956834" />
+                  <mssgle:LineSegment
+                    End="111.666666666667,-95.8057553956834" />
+                  <mssgle:CubicBezierSegment
+                    Point1="111.666666666667,-95.8057553956834"
+                    Point2="115.666666666667,-95.8057553956834"
+                    Point3="115.666666666667,-99.8057553956834" />
+                  <mssgle:LineSegment
+                    End="115.666666666667,-153.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga Stage Evaluaciones Riesgo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Carga Stage Evaluaciones Riesgo\Origen de archivo plano"
+          TopLeft="232,241" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB"
+          TopLeft="651,236" />
+        <EdgeLayout
+          Id="Package\Carga Stage Evaluaciones Riesgo.Paths[Salida de origen de archivo plano]"
+          TopLeft="428,259.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="223,0"
+              Start="0,0"
+              End="215.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="215.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Stage Evaluaciones Riesgo\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carga Stage Clientes">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Carga Stage Clientes\Destino de OLE DB"
+          TopLeft="651,236" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Carga Stage Clientes\Origen de archivo plano"
+          TopLeft="232,241" />
+        <EdgeLayout
+          Id="Package\Carga Stage Clientes.Paths[Salida de origen de archivo plano]"
+          TopLeft="428,259.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="223,0"
+              Start="0,0"
+              End="215.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="215.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Carga Stage Productos Financieros">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Carga Stage Productos Financieros\Destino de OLE DB"
+          TopLeft="651,236" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Carga Stage Productos Financieros\Origen de archivo plano"
+          TopLeft="232,241" />
+        <EdgeLayout
+          Id="Package\Carga Stage Productos Financieros.Paths[Salida de origen de archivo plano]"
+          TopLeft="428,259.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="223,0"
+              Start="0,0"
+              End="215.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="215.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Stage Productos Financieros\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carga Stage Transacciones">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Carga Stage Transacciones\Destino de OLE DB"
+          TopLeft="651,236" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Carga Stage Transacciones\Origen de archivo plano"
+          TopLeft="232,241" />
+        <EdgeLayout
+          Id="Package\Carga Stage Transacciones.Paths[Salida de origen de archivo plano]"
+          TopLeft="428,259.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="223,0"
+              Start="0,0"
+              End="215.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="215.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Stage Transacciones\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
